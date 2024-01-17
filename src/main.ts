@@ -1,13 +1,13 @@
 import './style.css'
 
-let currentPlayer: 'X' | 'O' = 'X'
-let moveCounter = 0
+// let currentPlayer: 'X' | 'O' = 'X'
+// let moveCounter = 0
 
 // Generic and works for ANY 'li'
 //
 // Because the event tells us the target
 // and the target is the thing we clicked on!
-function handleClickSquare(event: MouseEvent) {
+/***function handleClickSquare(event: MouseEvent) {
   // After this handler, stop the bubbling. End it here...
   event.stopPropagation()
 
@@ -61,8 +61,8 @@ function handleClickSquare(event: MouseEvent) {
 //   square.addEventListener('click', handleClickSquare)
 // )
 
-const gameBoard = document.querySelector('ul')
+// const gameBoard = document.querySelector('ul')
 
-if (gameBoard instanceof HTMLUListElement) {
-  gameBoard?.addEventListener('click', handleClickSquare)
-}
+// if (gameBoard instanceof HTMLUListElement) {
+//   gameBoard?.addEventListener('click', handleClickSquare)
+// }***/
