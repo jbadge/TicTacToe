@@ -1,11 +1,25 @@
 import './style.css'
 
-const firstListItem = document.querySelector('li')
+let currentPlayer: 'X' | 'O' = 'X'
 
-function handleClickSquare(event: { target: any }): void {
+function handleClickSquare(event: MouseEvent) {
   const thingClickedOn = event.target
 
-  thingClickedOn.textContent = 'X'
+  if (thingClickedOn instanceof HTMLLIElement) {
+    thingClickedOn.textContent = currentPlayer
+
+    thingClickedOn.classList.add('taken')
+
+    if (currentPlayer === 'X') {
+      currentPlayer = 'O'
+    } else {
+      currentPlayer = 'X'
+    }
+  }
 }
 
-firstListItem?.addEventListener('click', handleClickSquare)
+const allSquares = document.querySelectorAll('li')
+
+allSquares.forEach((square) =>
+  square.addEventListener('click', handleClickSquare)
+)
